@@ -48,4 +48,17 @@ export const styles = StyleSheet.create({
         fontFamily: fontFamily.bold,
         color: colors.gray[500],
     },
+    transactions: {
+        flex: 1,
+        padding: 24,
+        marginTop: 3,
+    },
+    header: {
+        marginTop: 70,
+        width: '100%',
+        height: 40,
+        //backgroundColor: colors.gray[200],
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     });
