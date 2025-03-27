@@ -1,45 +1,52 @@
-import { StyleSheet } from "react-native"
-import { colors } from "../../styles/color"
-import { fontFamily } from "../../styles/font-family"
+import { StyleSheet } from 'react-native';
+import { colors } from '../../styles/color';
+import { fontFamily } from '../../styles/font-family';
 
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.gray[300],
-    borderRadius: 5,
-    padding: 17,
-    marginBottom: 14
+    borderRadius: 8,
+    padding: 15,
+    marginBottom: 10,
+    width: '100%', 
+    alignSelf: 'center', 
   },
   description: {
     fontFamily: fontFamily.bold,
-    fontSize: 14,
-    color: colors.gray[500]
+    fontSize: 16,
+    color: colors.gray[500],
+    marginBottom: 5, 
   },
   amount: {
     fontFamily: fontFamily.bold,
-    fontSize: 20,
-    marginTop: 2,
-    color: colors.gray[500]
+    fontSize: 18,
+    color: colors.gray[500],
+    marginBottom: 5, 
   },
   local: {
-    fontFamily: fontFamily.bold,
+    fontFamily: fontFamily.regular,
     fontSize: 14,
-    marginTop: 2,
+    color: colors.gray[500],
+    marginBottom: 5,
   },
   footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 19
+    width: '100%',
+    flexDirection: 'column',
+    alignItems: 'flex-start', 
+    marginTop: 5,
+    borderTopWidth: 1, 
+    borderTopColor: colors.gray[400],
+    paddingTop: 5, 
   },
   category: {
     fontSize: 14,
     fontFamily: fontFamily.bold,
-    color: colors.gray[500]
+    color: colors.gray[500],
   },
   date: {
     fontSize: 14,
-    fontFamily: fontFamily.bold,
-    color: colors.gray[500]
+    fontFamily: fontFamily.regular,
+    color: colors.gray[500],
+    marginTop: 2,
   }
-})
-
+});

@@ -4,6 +4,7 @@ import { styles } from './styles';
 import { spendingCreate } from '../../storage/spending/spendingCreate';
 import { spendingGetAll } from '../../storage/spending/spendingGetAll';
 import { TextInputMask } from 'react-native-masked-text'; 
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export function Dashboard() {
   const [name, setName] = useState('');
@@ -13,6 +14,11 @@ export function Dashboard() {
   const [local, setLocal] = useState('');
 
   async function handleAddNewSpending() {
+    // await AsyncStorage.clear()
+    // alert("O programa será finalizado")
+    // return;
+
+
     const data = {
       name,
       amount,
