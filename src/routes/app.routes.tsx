@@ -22,7 +22,7 @@ export function AppRoutes () {
         <Navigator screenOptions={{
             headerShown: false,
             tabBarActiveTintColor: 'black',
-            tabBarShowLabel: true,
+            tabBarShowLabel: false,
             tabBarLabelPosition: 'beside-icon',
             tabBarInactiveBackgroundColor: 'white',
             tabBarStyle: {
@@ -34,11 +34,11 @@ export function AppRoutes () {
             name="dashboard" 
             component={Dashboard}
             options={{
-                tabBarLabel: 'Add',
+                tabBarLabel: '',
                 tabBarIcon: ({ size, color }) => 
                     <FontAwesome6 
-                     name="add" 
-                     size={26} 
+                        name="add" 
+                        size={26} 
                     /> 
             }}
             />
@@ -46,11 +46,11 @@ export function AppRoutes () {
             name="list" 
             component={List}
             options={{
-                tabBarLabel: 'List',
+                tabBarLabel: '',
                 tabBarIcon: ({ size, color }) => 
                     <FontAwesome 
-                     name="list-ul" 
-                     size={26} 
+                        name="list-ul" 
+                        size={26} 
                     /> 
                     
             }}
@@ -59,11 +59,11 @@ export function AppRoutes () {
             name="search" 
             component={Search}
             options={{
-                tabBarLabel: 'Search',
+                tabBarLabel: '',
                 tabBarIcon: ({ size, color }) => 
                     <FontAwesome 
-                     name="search" 
-                     size={26} 
+                        name="search" 
+                        size={26} 
                     /> 
                     
             }}

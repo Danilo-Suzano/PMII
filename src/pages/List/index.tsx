@@ -1,12 +1,14 @@
-// hooks
 import { useState, useEffect, useCallback } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
 import { FlatList, View, Text, TouchableOpacity, Alert } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
 import { styles } from './styles';
+import { colors } from '../../styles/color';
 
 import { spendingGetAll } from '../../storage/spending/spendingGetAll';
-import { spendingRemove } from '../../storage/spending/spendingRemove'; 
+import { spendingRemove } from '../../storage/spending/spendingRemove';
+
 import { SpendingStorageDTO } from '../../storage/spending/SpendingStorageDTO';
 
 import { TransactionExpenses } from '../../components/TransactionExpenses';
@@ -46,7 +48,7 @@ export function List() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Listagem de Gastos</Text>
+        <Text style={styles.title}>Seus Gastos</Text>
       </View>
 
       <View style={styles.transactions}>
@@ -54,13 +56,13 @@ export function List() {
           data={dataExpenses}
           keyExtractor={(item, index) => `${item.name}-${index}`}
           renderItem={({ item }) => (
-            <View>
+            <View style={{ position: 'relative' }}>
               <TransactionExpenses data={item} />
               <TouchableOpacity
                 style={styles.deleteButton}
                 onPress={() => handleDeleteSpending(item)}
               >
-                <Text style={styles.deleteButtonText}>Excluir</Text>
+                <Feather name="trash-2" size={18} color={colors.red.base} />
               </TouchableOpacity>
             </View>
           )}

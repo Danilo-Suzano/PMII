@@ -4,49 +4,54 @@ import { fontFamily } from '../../styles/font-family';
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.gray[300],
-    borderRadius: 8,
-    padding: 15,
-    marginBottom: 10,
-    width: '100%', 
-    alignSelf: 'center', 
+    backgroundColor: colors.gray[200],
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 16,
+    width: '100%',
+  },
+  categoryBadge: {
+    backgroundColor: colors.green.soft,
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    borderRadius: 12,
+    alignSelf: 'flex-start',
+    marginBottom: 12,
+  },
+  category: {
+    fontSize: 12,
+    fontFamily: fontFamily.medium,
+    color: colors.green.dark,
   },
   description: {
     fontFamily: fontFamily.bold,
     fontSize: 16,
     color: colors.gray[500],
-    marginBottom: 5, 
+    marginBottom: 12,
+  },
+  infoRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 8,
+  },
+  infoColumn: {
+    flex: 1,
+  },
+  label: {
+    fontSize: 12,
+    fontFamily: fontFamily.regular,
+    color: colors.gray[400],
+    marginBottom: 4,
+  },
+  value: {
+    fontSize: 14,
+    fontFamily: fontFamily.medium,
+    color: colors.gray[500],
   },
   amount: {
     fontFamily: fontFamily.bold,
-    fontSize: 18,
-    color: colors.gray[500],
-    marginBottom: 5, 
+    fontSize: 16,
+    color: colors.green.base,
   },
-  local: {
-    fontFamily: fontFamily.regular,
-    fontSize: 14,
-    color: colors.gray[500],
-    marginBottom: 5,
-  },
-  footer: {
-    width: '100%',
-    flexDirection: 'column',
-    alignItems: 'flex-start', 
-    marginTop: 5,
-    borderTopWidth: 1, 
-    borderTopColor: colors.gray[400],
-    paddingTop: 5, 
-  },
-  category: {
-    fontSize: 14,
-    fontFamily: fontFamily.bold,
-    color: colors.gray[500],
-  },
-  date: {
-    fontSize: 14,
-    fontFamily: fontFamily.regular,
-    color: colors.gray[500],
-    marginTop: 2,
-  }
 });

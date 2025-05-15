@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { styles } from './styles';
 import { spendingCreate } from '../../storage/spending/spendingCreate';
 import { spendingGetAll } from '../../storage/spending/spendingGetAll';
-import { TextInputMask } from 'react-native-masked-text'; 
+import { TextInputMask } from 'react-native-masked-text';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export function Dashboard() {
@@ -18,6 +19,11 @@ export function Dashboard() {
     // alert("O programa será finalizado")
     // return;
 
+    // Validação dos campos
+    if (name.trim() === '' || amount.trim() === '' || datePurchase.trim() === '' || 
+        category.trim() === '' || local.trim() === '') {
+      return Alert.alert('Atenção', 'Todos os campos devem ser preenchidos!');
+    }
 
     const data = {
       name,
@@ -36,52 +42,68 @@ export function Dashboard() {
     setDatePurchase('');
     setCategory('');
     setLocal('');
+
+    Alert.alert('Sucesso', 'Gasto adicionado com sucesso!');
   }
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Controle de Gastos</Text>
-      
-      <TextInput 
-        style={styles.input} 
-        placeholder='Descrição' 
-        value={name}
-        onChangeText={value => setName(value)}
-      />
-      
-      
-      <TextInputMask
-        type={'datetime'}
-        options={{
-          format: 'DD/MM/YYYY',
-        }}
-        style={styles.input}
-        placeholder="Data"
-        value={datePurchase}
-        onChangeText={value => setDatePurchase(value)}
-      />
-      
-      <TextInput 
-        style={styles.input} 
-        placeholder='Valor' 
-        keyboardType='numeric' 
-        value={amount}
-        onChangeText={value => setAmount(value)}
-      />
-      
-      <TextInput 
-        style={styles.input} 
-        placeholder='Categoria' 
-        value={category}
-        onChangeText={value => setCategory(value)}
-      />
-      
-      <TextInput 
-        style={styles.input} 
-        placeholder='Local' 
-        value={local}
-        onChangeText={value => setLocal(value)}
-      />
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Categoria</Text>
+        <TextInput 
+          style={styles.input} 
+          placeholder='Categoria'
+          value={category}
+          onChangeText={value => setCategory(value)}
+        />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Descrição</Text>
+        <TextInput 
+          style={styles.input} 
+          placeholder='Despesa'
+          value={name}
+          onChangeText={value => setName(value)}
+        />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Valor</Text>
+        <TextInput 
+          style={styles.input} 
+          placeholder='R$0,00'
+          keyboardType='numeric'
+          value={amount}
+          onChangeText={value => setAmount(value)}
+        />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Data</Text>
+        <TextInputMask
+          type={'datetime'}
+          options={{
+            format: 'DD/MM/YYYY',
+          }}
+          style={styles.input}
+          placeholder="DD/MM/AAAA"
+          value={datePurchase}
+          onChangeText={value => setDatePurchase(value)}
+        />
+      </View>
+
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Local</Text>
+        <TextInput 
+          style={styles.input} 
+          placeholder='Local'
+          value={local}
+          onChangeText={value => setLocal(value)}
+        />
+      </View>
 
       <TouchableOpacity style={styles.button} onPress={handleAddNewSpending}>
         <Text style={styles.buttonText}>Adicionar</Text>

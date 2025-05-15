@@ -11,45 +11,70 @@ export const styles = StyleSheet.create({
     marginTop: 70,
     width: '100%',
     height: 40,
-    //backgroundColor: colors.gray[200],
-    alignItems: 'center',
-    justifyContent: 'center',
-
+    paddingHorizontal: 20,
+    marginBottom: 20,
   },
   title: {
     color: colors.gray[500],
     fontWeight: 'bold',
-    fontSize: 24,
-
+    fontSize: 20,
+  },
+  searchSection: {
+    flexDirection: 'row',
+    marginHorizontal: 20,
+    marginBottom: 30,
+    alignItems: 'center',
   },
   inputContainer: {
-    width: '100%',
-    padding: 10,
+    flex: 1,
+    backgroundColor: colors.gray[200],
+    borderRadius: 8,
+    paddingHorizontal: 15,
+    paddingVertical: 12,
   },
   input: {
-    width: '100%',
-    backgroundColor: colors.gray[200],
-    padding: 10,
-    fontSize: 14,
-    marginTop: 20,
-
+    fontSize: 16,
+    color: colors.gray[500],
   },
   buttonContainer: {
-    width: '100%',
-    padding: 10,
+    marginLeft: 10,
   },
   button: {
-    width: '100%',
-    padding: 10,
-    fontSize: 10,
+    width: 45,
+    height: 45,
     backgroundColor: colors.green.base,
-    marginTop: 15,
-    borderRadius: 5,
+    borderRadius: 8,
     alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonText: {
     color: colors.green.soft,
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
+  },
+  resultsContainer: {
+    flex: 1,
+    paddingHorizontal: 20,
+  },
+  emptyStateContainer: {
+    alignItems: 'center',
+    marginTop: 50,
+  },
+  emptyIcon: {
+    fontSize: 60,
+    color: colors.gray[300],
+    marginBottom: 20,
+  },
+  emptyText: {
+    fontSize: 16,
+    color: colors.gray[400],
+    textAlign: 'center',
+  },
+  emptySubText: {
+    fontSize: 14,
+    color: colors.gray[300],
+    textAlign: 'center',
+    marginTop: 5,
+    fontStyle: 'italic',
   }
 })
